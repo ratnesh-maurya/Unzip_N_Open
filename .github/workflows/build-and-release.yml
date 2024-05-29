@@ -3,7 +3,7 @@ name: Build and Release
 on:
   push:
     branches:
-      - initial
+      - main
 
 jobs:
   build:
@@ -20,39 +20,39 @@ jobs:
         go-version: 1.21.5
 
     - name: Build Linux amd64 Binary
-      run: GOOS=linux GOARCH=amd64 go build -o initz_linux_amd64
+      run: GOOS=linux GOARCH=amd64 go build -o rzip_linux_amd64
 
     - name: Build Linux arm64 Binary
-      run: GOOS=linux GOARCH=arm64 go build -o initz_linux_arm64
+      run: GOOS=linux GOARCH=arm64 go build -o rzip_linux_arm64
 
     - name: Build Windows amd64 Binary
-      run: GOOS=windows GOARCH=amd64 go build -o initz_windows_amd64.exe
+      run: GOOS=windows GOARCH=amd64 go build -o rzip_windows_amd64.exe
 
     - name: Build Windows arm64 Binary
-      run: GOOS=windows GOARCH=arm64 go build -o initz_windows_arm64.exe
+      run: GOOS=windows GOARCH=arm64 go build -o rzip_windows_arm64.exe
 
     - name: Build macOS amd64 Binary
-      run: GOOS=darwin GOARCH=amd64 go build -o initz_macos_amd64
+      run: GOOS=darwin GOARCH=amd64 go build -o rzip_macos_amd64
 
     - name: Build macOS arm64 Binary
-      run: GOOS=darwin GOARCH=arm64 go build -o initz_macos_arm64
+      run: GOOS=darwin GOARCH=arm64 go build -o rzip_macos_arm64
 
     - name: Archive binaries
       uses: actions/upload-artifact@v2
       with:
         name: binaries
         path: |
-          ./initz_linux_amd64
-          ./initz_linux_arm64
-          ./initz_windows_amd64.exe
-          ./initz_windows_arm64.exe
-          ./initz_macos_amd64
-          ./initz_macos_arm64
+          ./rzip_linux_amd64
+          ./rzip_linux_arm64
+          ./rzip_windows_amd64.exe
+          ./rzip_windows_arm64.exe
+          ./rzip_macos_amd64
+          ./rzip_macos_arm64
   release:
     name: Create Release
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/initial' && github.event_name == 'push'
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
 
     steps:
     - name: Checkout code
@@ -83,8 +83,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./initz_linux_amd64
-        asset_name: initz_linux_amd64
+        asset_path: ./rzip_linux_amd64
+        asset_name: rzip_linux_amd64
         asset_content_type: application/octet-stream
 
     - name: Upload Linux arm64 Binary
@@ -93,8 +93,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./initz_linux_arm64
-        asset_name: initz_linux_arm64
+        asset_path: ./rzip_linux_arm64
+        asset_name: rzip_linux_arm64
         asset_content_type: application/octet-stream
 
     - name: Upload Windows amd64 Binary
@@ -103,8 +103,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./initz_windows_amd64.exe
-        asset_name: initz_windows_amd64.exe
+        asset_path: ./rzip_windows_amd64.exe
+        asset_name: rzip_windows_amd64.exe
         asset_content_type: application/octet-stream
 
     - name: Upload Windows arm64 Binary
@@ -113,8 +113,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./initz_windows_arm64.exe
-        asset_name: initz_windows_arm64.exe
+        asset_path: ./rzip_windows_arm64.exe
+        asset_name: rzip_windows_arm64.exe
         asset_content_type: application/octet-stream
 
     - name: Upload macOS amd64 Binary
@@ -123,8 +123,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./initz_macos_amd64
-        asset_name: initz_macos_amd64
+        asset_path: ./rzip_macos_amd64
+        asset_name: rzip_macos_amd64
         asset_content_type: application/octet-stream
 
     - name: Upload macOS arm64 Binary
@@ -133,6 +133,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./initz_macos_arm64
-        asset_name: initz_macos_arm64
+        asset_path: ./rzip_macos_arm64
+        asset_name: rzip_macos_arm64
         asset_content_type: application/octet-stream
