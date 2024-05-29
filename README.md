@@ -25,9 +25,13 @@ To build from source, ensure you have Go installed on your system. Then, run the
 ```bash
 git clone https://github.com/ratnesh-maurya/Unzip_N_Open.git
 cd Unzip_N_Open
-go build -o Unzip_N_Open cmd/main.go
+go build
+go install
 ```
-
+## Usage 
+```bash
+rzip code <File Path> 
+```
 ## Contributing
 Contributions to this project are welcome! If you encounter any bugs or have suggestions for improvements, feel free to open an issue or submit a pull request. Your feedback helps make this tool better for everyone.
 
