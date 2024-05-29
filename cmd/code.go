@@ -43,8 +43,8 @@ var codeCmd = &cobra.Command{
 		}
 		return nil
 	},
-	Example: `uzo code demo.zip
-uzo code /Downloads/application.zip`,
+	Example: `rzip code demo.zip
+rzip code /Downloads/application.zip`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println(File)
 		var filename string
