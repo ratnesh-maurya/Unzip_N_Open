@@ -3,7 +3,7 @@
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/ratnesh-maurya/Unzip_N_Open)
 ![GitHub](https://img.shields.io/github/license/ratnesh-maurya/Unzip_N_Open)
 
-Unzip_N_Open is a CLI tool that simplifies the process of unzipping files and opening them in different IDEs or text editors. It supports various platforms such as Linux, Windows, and macOS, making it easy to work with compressed files in your development environment.
+Unzip_N_Open is a CLI tool that simplifies the process of unzipping files and opening them in different IDEs or text editors. 
 
 ## Features
 
