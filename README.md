@@ -13,24 +13,27 @@ Unzip_N_Open is a CLI tool that simplifies the process of unzipping files and op
 - Simple and intuitive command-line interface.
 
 ## Installation
-
-### Pre-built Binaries
-
-Pre-built binaries for different platforms are available in the [releases](https://github.com/ratnesh-maurya/Unzip_N_Open/releases) section. Download the binary for your operating system and architecture, and place it in your PATH.
-
 ### From Source
 
 To build from source, ensure you have Go installed on your system. Then, run the following commands:
 
 ```bash
 git clone https://github.com/ratnesh-maurya/Unzip_N_Open.git
+```
+```go
 cd Unzip_N_Open
+```
+```go
 go mod tidy
+```
+```go
 go build
+```
+```go
 go install
 ```
 ## Usage 
-```bash
+```go
 rzip code <File Path> 
 ```
 ## Contributing
