@@ -25,6 +25,7 @@ To build from source, ensure you have Go installed on your system. Then, run the
 ```bash
 git clone https://github.com/ratnesh-maurya/Unzip_N_Open.git
 cd Unzip_N_Open
+go mod tidy
 go build
 go install
 ```
