@@ -44,4 +44,12 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## Maintainer
 [<img src="https://avatars.githubusercontent.com/u/85143283?s=80&amp;v=4" width="50" height="50" alt="Ratnesh Maurya" style="border-radius:50%">](https://github.com/ratnesh-maurya)
+---
 
+### Links
+
+- 🌐 Blog: https://blog.ratnesh-maurya.com/
+- 💼 Portfolio: https://ratnesh-maurya.com/
+
+[![Blog](https://img.shields.io/badge/Blog-Visit-blue?style=for-the-badge)](https://blog.ratnesh-maurya.com/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-black?style=for-the-badge)](https://ratnesh-maurya.com/)
